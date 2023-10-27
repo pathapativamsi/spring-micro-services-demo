@@ -2,18 +2,19 @@ package com.dailycodebuffer.springbootdemo.controller;
 
 import com.dailycodebuffer.springbootdemo.model.Employee;
 import com.dailycodebuffer.springbootdemo.service.EmployeeService;
+import com.dailycodebuffer.springbootdemo.service.EmployeeServiceImplv2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.annotation.Target;
 import java.util.List;
 
 @RestController
-@RequestMapping("/employees")
-public class EmployeeController {
-
-    @Qualifier("employeeServiceImpl")
+@RequestMapping("/v2/employees")
+public class EmployeeControllerV2 {
+    @Qualifier("employeeServiceImplv2")
     @Autowired
     private EmployeeService employeeService;
 
